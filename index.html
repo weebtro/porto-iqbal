@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="id" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Iqbal — SEO Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF7EF; --paper-alt:#F3ECDB; --card:#FFFFFF;
+    --ink:#2B2A1F; --ink-soft:rgba(43,42,31,0.66); --ink-faint:rgba(43,42,31,0.45);
+    --moss:#5B7A52; --moss-deep:#3F5738; --moss-tint:#E4EBDF;
+    --gold:#D9A441; --gold-tint:#F7E8C8;
+    --accent-text:#3F5738; --gold-text:#7A5B1E;
+    --header-bg:rgba(251,247,239,0.88);
+    --line:rgba(43,42,31,0.12);
+    --display:'Fraunces', serif; --body:'Karla', sans-serif; --mono:'IBM Plex Mono', monospace;
+    --radius:22px;
+    --shadow-sm:0 2px 10px rgba(43,42,31,0.05);
+    --shadow-md:0 12px 30px rgba(63,87,56,0.10);
+    --shadow-lg:0 20px 46px rgba(63,87,56,0.16);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    color-scheme: light;
+  }
+  html[data-theme="dark"]{
+    --paper:#1B1F19; --paper-alt:#20251E; --card:#232921;
+    --ink:#F1EEE3; --ink-soft:rgba(241,238,227,0.72); --ink-faint:rgba(241,238,227,0.5);
+    --moss-tint:rgba(111,169,104,0.16);
+    --gold-tint:rgba(230,180,90,0.16);
+    --accent-text:#8FDD8A; --gold-text:#F0C878;
+    --header-bg:rgba(27,31,25,0.85);
+    --line:rgba(241,238,227,0.12);
+    --shadow-sm:0 2px 10px rgba(0,0,0,0.18);
+    --shadow-md:0 12px 30px rgba(0,0,0,0.28);
+    --shadow-lg:0 20px 46px rgba(0,0,0,0.36);
+    color-scheme: dark;
+  }
+  html{scroll-behavior:smooth;transition:background .35s ease;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cline x1='18' y1='28' x2='68' y2='14' stroke='%235B7A52' stroke-opacity='0.16' stroke-width='1'/%3E%3Cline x1='68' y1='14' x2='112' y2='54' stroke='%235B7A52' stroke-opacity='0.16' stroke-width='1'/%3E%3Cline x1='18' y1='28' x2='44' y2='92' stroke='%235B7A52' stroke-opacity='0.13' stroke-width='1'/%3E%3Cline x1='44' y1='92' x2='104' y2='118' stroke='%235B7A52' stroke-opacity='0.13' stroke-width='1'/%3E%3Cline x1='112' y1='54' x2='44' y2='92' stroke='%235B7A52' stroke-opacity='0.1' stroke-width='1'/%3E%3Cline x1='112' y1='54' x2='140' y2='110' stroke='%235B7A52' stroke-opacity='0.1' stroke-width='1'/%3E%3Ccircle cx='18' cy='28' r='2.1' fill='%235B7A52' fill-opacity='0.32'/%3E%3Ccircle cx='68' cy='14' r='2.1' fill='%235B7A52' fill-opacity='0.32'/%3E%3Ccircle cx='112' cy='54' r='2.6' fill='%23D9A441' fill-opacity='0.4'/%3E%3Ccircle cx='44' cy='92' r='2.1' fill='%235B7A52' fill-opacity='0.28'/%3E%3Ccircle cx='104' cy='118' r='2.1' fill='%235B7A52' fill-opacity='0.28'/%3E%3Ccircle cx='140' cy='110' r='1.8' fill='%235B7A52' fill-opacity='0.22'/%3E%3C/svg%3E") 0 0/150px 150px,
+      var(--paper);
+    color:var(--ink);font-family:var(--body);line-height:1.6;font-size:16px;
+  }
+  a{color:inherit;} ::selection{background:var(--gold-tint);color:var(--ink);}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+  @media (max-width:600px){.wrap{padding:0 20px;}}
+
+  header{position:sticky;top:0;z-index:100;background:var(--header-bg);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);transition:background .35s ease, border-color .35s ease;}
+  header::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg, var(--moss), var(--gold), var(--moss));
+    background-size:200% 100%;animation:gradient-shift 6s linear infinite;
+  }
+  @keyframes gradient-shift{0%{background-position:0% 0;}100%{background-position:200% 0;}}
+  @media (prefers-reduced-motion: reduce){ header::before{animation:none;} }
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px;}
+  .brand{font-family:var(--display);font-weight:600;font-size:19px;text-decoration:none;flex-shrink:0;}
+  .nav-right{display:flex;align-items:center;gap:18px;}
+  nav.desktop-nav ul{list-style:none;display:flex;gap:28px;font-size:14.5px;}
+  nav.desktop-nav a{text-decoration:none;color:var(--ink-soft);transition:color .15s;}
+  nav.desktop-nav a:hover{color:var(--accent-text);}
+  @media (max-width:760px){nav.desktop-nav{display:none;}}
+
+  .lang-toggle{
+    display:flex;border:1.5px solid var(--line);border-radius:100px;padding:3px;font-family:var(--mono);
+    font-size:12px;flex-shrink:0;
+  }
+  .lang-toggle button{
+    border:none;background:none;padding:6px 12px;border-radius:100px;cursor:pointer;color:var(--ink-faint);
+    font-family:var(--mono);font-size:12px;font-weight:500;transition:.15s;
+  }
+  .lang-toggle button.active{background:var(--moss-deep);color:#fff;}
+
+  .theme-toggle{
+    display:flex;align-items:center;justify-content:center;width:38px;height:38px;
+    border:1.5px solid var(--line);border-radius:50%;background:var(--card);cursor:pointer;
+    flex-shrink:0;transition:transform .3s var(--ease-spring), border-color .2s ease, background .35s ease;
+  }
+  .theme-toggle:hover{transform:rotate(-14deg) scale(1.08);border-color:var(--moss-deep);}
+  .theme-toggle svg{width:18px;height:18px;stroke:var(--ink);transition:stroke .3s ease;}
+  .theme-toggle .icon-moon{display:none;}
+  html[data-theme="dark"] .theme-toggle .icon-sun{display:none;}
+  html[data-theme="dark"] .theme-toggle .icon-moon{display:block;}
+
+  .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:10px;width:42px;height:42px;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;}
+  @media (max-width:760px){.menu-btn{display:flex;}}
+  .menu-btn span{display:block;width:18px;height:2px;background:var(--ink);position:relative;}
+  .menu-btn span::before,.menu-btn span::after{content:'';position:absolute;left:0;width:18px;height:2px;background:var(--ink);}
+  .menu-btn span::before{top:-6px;} .menu-btn span::after{top:6px;}
+
+  .mobile-nav{display:none;flex-direction:column;gap:2px;background:var(--card);border-bottom:1px solid var(--line);}
+  .mobile-nav.open{display:flex;}
+  .mobile-nav a{padding:16px 24px;text-decoration:none;color:var(--ink);font-size:15px;border-top:1px solid var(--line);}
+
+  .hero{padding:60px 0 40px;position:relative;overflow:hidden;}
+  .hero::before,.hero::after{
+    content:'';position:absolute;border-radius:50%;filter:blur(60px);z-index:0;pointer-events:none;
+  }
+  .hero::before{
+    width:340px;height:340px;background:radial-gradient(circle, rgba(91,122,82,0.22), transparent 70%);
+    top:-120px;right:-80px;
+  }
+  .hero::after{
+    width:260px;height:260px;background:radial-gradient(circle, rgba(217,164,65,0.20), transparent 70%);
+    bottom:-60px;left:-60px;
+  }
+  .hero .wrap{position:relative;z-index:1;}
+  .hero-top{display:flex;gap:22px;align-items:center;margin-bottom:34px;}
+  .avatar{
+    width:76px;height:76px;border-radius:50%;flex-shrink:0;object-fit:cover;
+    background:linear-gradient(150deg, var(--moss), var(--gold));
+    box-shadow:0 0 0 5px var(--card), 0 8px 24px rgba(63,87,56,0.22);
+    transition:transform .35s var(--ease-spring), box-shadow .35s ease;
+  }
+  .avatar:hover{transform:scale(1.06) rotate(-3deg);}
+  .hero-greet{font-size:15.5px;color:var(--ink-soft);}
+  .hero-greet b{color:var(--ink);}
+  .status-badge{
+    display:inline-flex;align-items:center;gap:7px;margin-top:8px;font-family:var(--mono);
+    font-size:11.5px;color:var(--accent-text);background:var(--moss-tint);padding:5px 12px 5px 9px;
+    border-radius:100px;
+  }
+  .pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--moss);position:relative;flex-shrink:0;}
+  .pulse-dot::after{
+    content:'';position:absolute;inset:-4px;border-radius:50%;border:1.5px solid var(--moss);
+    animation:pulse-ring 2.2s ease-out infinite;
+  }
+  @keyframes pulse-ring{
+    0%{transform:scale(0.6);opacity:0.8;}
+    100%{transform:scale(1.8);opacity:0;}
+  }
+  @media (prefers-reduced-motion: reduce){ .pulse-dot::after{animation:none;} }
+  h1{font-family:var(--display);font-weight:600;font-size:clamp(32px,5.2vw,50px);line-height:1.14;letter-spacing:-0.01em;max-width:640px;}
+  h1 em{font-style:italic;color:var(--accent-text);}
+  .hero-sub{margin-top:20px;font-size:17px;color:var(--ink-soft);max-width:560px;}
+  .hero-cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{font-family:var(--body);font-weight:600;font-size:14.5px;padding:14px 26px;border-radius:100px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:transform .15s ease, box-shadow .15s ease;}
+  .btn-primary{background:linear-gradient(135deg, var(--moss-deep), var(--moss));color:#fff;box-shadow:0 6px 16px rgba(63,87,56,0.22);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(63,87,56,0.32);}
+  .btn-ghost{border:1.5px solid var(--line);color:var(--ink);background:var(--card);}
+  .btn-ghost:hover{border-color:var(--moss-deep);color:var(--accent-text);transform:translateY(-2px);}
+
+  .growth-panel{margin-top:56px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 28px 22px;box-shadow:var(--shadow-md);}
+  #growth-line{stroke-dasharray:900;stroke-dashoffset:900;transition:stroke-dashoffset 1.6s cubic-bezier(.4,.1,.2,1);}
+  .growth-panel.in #growth-line{stroke-dashoffset:0;}
+  #growth-dots circle{opacity:0;transform-origin:center;transition:opacity .4s ease, transform .4s ease;}
+  .growth-panel.in #growth-dots circle{opacity:1;}
+  .growth-panel.in #growth-dots circle:nth-child(1){transition-delay:.2s;}
+  .growth-panel.in #growth-dots circle:nth-child(2){transition-delay:.55s;}
+  .growth-panel.in #growth-dots circle:nth-child(3){transition-delay:.85s;}
+  .growth-panel.in #growth-dots circle:nth-child(4){transition-delay:1.1s;}
+  .growth-panel.in #growth-dots circle:nth-child(5){transition-delay:1.3s;}
+  .growth-panel.in #growth-dots circle:nth-child(6){transition-delay:1.5s;}
+  .growth-label{font-size:13px;color:var(--ink-faint);margin-bottom:4px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;}
+  .growth-label b{color:var(--ink);font-family:var(--display);font-size:15px;font-weight:600;}
+  .growth-caption{font-size:12.5px;color:var(--ink-faint);margin-bottom:16px;max-width:560px;}
+  .chart-frame{display:flex;gap:10px;}
+  .axis-label{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--mono);font-size:10px;color:var(--ink-faint);text-align:center;white-space:nowrap;padding:4px 0;}
+  #growthchart{width:100%;height:auto;flex:1;}
+  .milestones{display:flex;justify-content:space-between;margin-top:4px;gap:4px;}
+  .milestone{flex:1;text-align:center;}
+  .milestone .m-role{font-size:11.5px;font-weight:700;color:var(--moss-deep);display:block;line-height:1.3;}
+  .milestone .m-meta{font-family:var(--mono);font-size:9.5px;color:var(--ink-faint);}
+  @media (max-width:640px){ .milestone .m-meta{display:none;} .milestone .m-role{font-size:10px;} }
+  .x-axis-label{text-align:right;font-family:var(--mono);font-size:10px;color:var(--ink-faint);margin-top:10px;}
+
+  .impact{padding:20px 0 10px;}
+  .impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  @media (max-width:640px){.impact-grid{grid-template-columns:repeat(2,1fr);}}
+  .impact-card{background:var(--card);border-radius:16px;padding:22px 18px;text-align:left;border:1px solid var(--line);box-shadow:var(--shadow-sm);transition:transform .3s var(--ease-spring), box-shadow .3s ease;}
+  .impact-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+  .impact-card b{font-family:var(--display);font-size:30px;font-weight:600;color:var(--accent-text);display:block;}
+  .impact-card span{font-size:12.5px;color:var(--ink-faint);}
+
+  section{padding:80px 0;}
+  .sec-head{margin-bottom:40px;max-width:580px;}
+  .sec-eyebrow{font-size:13px;font-weight:700;color:var(--accent-text);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+  .sec-eyebrow::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+  .sec-title{font-family:var(--display);font-weight:600;font-size:clamp(24px,3.2vw,32px);letter-spacing:-0.01em;}
+  .sec-note{margin-top:12px;font-size:15px;color:var(--ink-soft);}
+
+  .story-card{
+    background:var(--card);border:1px solid var(--line);border-left:3px solid transparent;
+    border-radius:var(--radius);padding:30px 32px;margin-bottom:20px;position:relative;
+    box-shadow:var(--shadow-sm);transition:transform .3s var(--ease-spring), box-shadow .3s ease, border-left-color .3s ease;
+  }
+  .story-card:last-child{margin-bottom:0;}
+  .story-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-left-color:var(--moss);}
+  .story-period{font-size:12.5px;font-weight:600;color:var(--accent-text);background:var(--moss-tint);padding:5px 12px;border-radius:100px;white-space:nowrap;}
+  .story-role{font-family:var(--display);font-size:22px;font-weight:600;margin-top:14px;}
+  .story-org{font-size:14px;color:var(--ink-faint);margin-top:3px;margin-bottom:16px;}
+  .story-desc{font-size:15px;color:var(--ink-soft);max-width:620px;}
+  .story-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+  .tag{font-size:12.5px;padding:6px 12px;border-radius:100px;background:var(--paper-alt);color:var(--ink-soft);}
+  .story-toggle{margin-top:18px;font-size:13.5px;font-weight:600;color:var(--accent-text);background:none;border:none;cursor:pointer;padding:0;display:flex;align-items:center;gap:6px;}
+  .story-toggle .chev{transition:transform .2s;}
+  .story-toggle.open .chev{transform:rotate(180deg);}
+  .story-detail{display:none;margin-top:18px;padding-top:18px;border-top:1px solid var(--line);}
+  .story-detail.open{display:block;}
+  .story-detail h4{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--ink-faint);margin:16px 0 8px;}
+  .story-detail h4:first-child{margin-top:0;}
+  .story-detail ul{padding-left:18px;font-size:14.5px;color:var(--ink-soft);}
+  .story-detail li{margin-bottom:5px;}
+
+  .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  @media (max-width:720px){.skill-grid{grid-template-columns:1fr;}}
+  .skill-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-sm);transition:transform .3s var(--ease-spring), box-shadow .3s ease;}
+  .skill-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+  .skill-icon{width:44px;height:44px;border-radius:12px;background:var(--moss-tint);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--accent-text);transition:background .25s ease, transform .25s ease, color .35s ease;}
+  .skill-card:hover .skill-icon{background:var(--gold-tint);transform:rotate(-6deg) scale(1.05);}
+  .skill-card h3{font-family:var(--display);font-size:18px;font-weight:600;margin-bottom:6px;}
+  .skill-card p{font-size:13.5px;color:var(--ink-faint);margin-bottom:16px;}
+  .skill-list{list-style:none;font-size:14px;color:var(--ink-soft);}
+  .skill-list li{padding:6px 0;border-top:1px solid var(--line);}
+  .skill-list li:first-child{border-top:none;}
+
+  .tool-cloud{display:flex;flex-wrap:wrap;gap:10px;}
+  .tool-chip{font-size:13.5px;padding:9px 16px;border-radius:100px;background:var(--card);border:1px solid var(--line);color:var(--ink-soft);transition:background .2s ease, color .2s ease, border-color .2s ease, transform .25s var(--ease-spring);}
+  .tool-chip:hover{background:var(--moss-deep);color:#fff;border-color:var(--moss-deep);transform:translateY(-2px);}
+
+  .case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  @media (max-width:720px){.case-grid{grid-template-columns:1fr;}}
+  .case-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:transform .3s var(--ease-spring), box-shadow .3s ease;}
+  .case-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+  .case-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+  .case-name{font-family:var(--display);font-size:18px;font-weight:600;}
+  .case-name a{text-decoration:none;border-bottom:1.5px solid var(--moss);transition:color .2s ease, border-color .2s ease;}
+  .case-name a:hover{color:var(--accent-text);border-color:var(--gold);}
+  .case-year{font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);white-space:nowrap;}
+  .case-desc{font-size:14px;color:var(--ink-soft);margin-top:10px;flex-grow:1;}
+  .case-meta{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+  .case-kw{font-size:12.5px;padding:6px 12px;border-radius:100px;background:var(--gold-tint);color:var(--gold-text);font-style:italic;}
+  .case-method{font-size:12px;padding:6px 12px;border-radius:100px;background:var(--moss-tint);color:var(--accent-text);font-weight:600;}
+  .case-full{grid-column:1 / -1;}
+
+  .proj-row{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);align-items:flex-start;}
+  .proj-row:last-child{border-bottom:none;}
+  .proj-mark{width:34px;height:34px;border-radius:50%;background:var(--gold-tint);color:var(--gold-text);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;flex-shrink:0;margin-top:2px;}
+  .proj-name{font-family:var(--display);font-size:17px;font-weight:600;}
+  .proj-desc{font-size:14px;color:var(--ink-soft);margin-top:3px;}
+  .proj-year{font-size:12.5px;color:var(--ink-faint);margin-top:2px;}
+
+  .edu-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 32px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;box-shadow:var(--shadow-sm);transition:transform .3s var(--ease-spring), box-shadow .3s ease;}
+  .edu-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
+  .edu-card h3{font-family:var(--display);font-size:19px;font-weight:600;margin-bottom:4px;}
+  .edu-card p{font-size:14px;color:var(--ink-faint);}
+  .edu-period{font-size:12.5px;font-weight:600;color:var(--accent-text);background:var(--moss-tint);padding:6px 14px;border-radius:100px;white-space:nowrap;}
+
+  footer{background:var(--moss-deep);color:#F4EFE3;padding:80px 0 40px;position:relative;overflow:hidden;}
+  footer::before{
+    content:'';position:absolute;width:400px;height:400px;border-radius:50%;
+    background:radial-gradient(circle, rgba(217,164,65,0.18), transparent 70%);
+    top:-140px;right:-100px;pointer-events:none;
+  }
+  footer .wrap{position:relative;z-index:1;}
+  .foot-card{max-width:640px;}
+  .foot-eyebrow{font-size:13px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px;}
+  footer h2{font-family:var(--display);font-weight:600;font-size:clamp(26px,4vw,38px);line-height:1.2;}
+  footer p.foot-sub{margin-top:16px;font-size:15.5px;color:rgba(244,239,227,0.75);max-width:520px;}
+  .contact-grid{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  @media (max-width:680px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-card{background:rgba(244,239,227,0.06);border:1px solid rgba(244,239,227,0.18);border-radius:16px;padding:20px;text-decoration:none;transition:.15s;}
+  .contact-card:hover{background:rgba(244,239,227,0.12);transform:translateY(-3px);border-color:var(--gold);}
+  .contact-card span{font-size:12px;color:rgba(244,239,227,0.55);text-transform:uppercase;letter-spacing:0.05em;}
+  .contact-card b{display:block;font-family:var(--display);font-size:15.5px;font-weight:600;margin-top:6px;}
+  .foot-bottom{margin-top:60px;padding-top:24px;border-top:1px solid rgba(244,239,227,0.15);display:flex;justify-content:space-between;font-size:12.5px;color:rgba(244,239,227,0.5);flex-wrap:wrap;gap:8px;}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  .impact-grid.reveal .impact-card,
+  .skill-grid.reveal .skill-card,
+  .case-grid.reveal .case-card,
+  .tool-cloud.reveal .tool-chip{opacity:0;transform:translateY(14px);transition:opacity .5s ease, transform .5s ease;}
+  .impact-grid.reveal.in .impact-card,
+  .skill-grid.reveal.in .skill-card,
+  .case-grid.reveal.in .case-card,
+  .tool-cloud.reveal.in .tool-chip{opacity:1;transform:translateY(0);}
+  .impact-grid.in .impact-card:nth-child(1),.skill-grid.in .skill-card:nth-child(1),.case-grid.in .case-card:nth-child(1){transition-delay:.05s;}
+  .impact-grid.in .impact-card:nth-child(2),.skill-grid.in .skill-card:nth-child(2),.case-grid.in .case-card:nth-child(2){transition-delay:.15s;}
+  .impact-grid.in .impact-card:nth-child(3),.skill-grid.in .skill-card:nth-child(3),.case-grid.in .case-card:nth-child(3){transition-delay:.25s;}
+  .impact-grid.in .impact-card:nth-child(4),.case-grid.in .case-card:nth-child(4){transition-delay:.35s;}
+  .case-grid.in .case-card:nth-child(5){transition-delay:.45s;}
+  @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none;} html{scroll-behavior:auto;}}
+  :focus-visible{outline:2px solid var(--moss-deep);outline-offset:3px;border-radius:4px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">Iqbal.</a>
+    <nav class="desktop-nav">
+      <ul>
+        <li><a href="#experience" data-i18n="nav-journey">Perjalanan</a></li>
+        <li><a href="#skills" data-i18n="nav-skills">Keahlian</a></li>
+        <li><a href="#cases" data-i18n="nav-cases">Studi Kasus</a></li>
+        <li><a href="#contact" data-i18n="nav-contact">Kontak</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeBtn" aria-label="Ganti tema terang/gelap">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <div class="lang-toggle" role="group" aria-label="Language switch">
+        <button id="btnID" class="active" onclick="setLang('id')">ID</button>
+        <button id="btnEN" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Buka menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#experience" data-i18n="nav-journey">Perjalanan</a>
+    <a href="#skills" data-i18n="nav-skills">Keahlian</a>
+    <a href="#cases" data-i18n="nav-cases">Studi Kasus</a>
+    <a href="#contact" data-i18n="nav-contact">Kontak</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-top">
+        <img class="avatar" src="data:image/jpeg;base64,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" alt="Foto Muhammad Iqbal">
+        <div>
+          <div class="hero-greet" data-i18n="hero-greet">Halo, saya <b>Muhammad Iqbal</b> — senang Anda mampir 👋</div>
+          <div class="status-badge"><span class="pulse-dot"></span><span data-i18n="status-badge">Terbuka untuk proyek baru</span></div>
+        </div>
+      </div>
+      <h1 data-i18n="hero-h1">Saya membantu website tumbuh, <em>bukan sekadar naik peringkat.</em></h1>
+      <p class="hero-sub" data-i18n="hero-sub">7 tahun menekuni SEO — mulai sebagai SEO Staff di Semarang, kini menjadi SEO Specialist untuk perusahaan fintech di Jakarta. Saya percaya SEO yang baik dimulai dari memahami orang yang mencari, bukan hanya algoritma yang menilai.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contact" data-i18n="hero-cta1">Ngobrol dengan saya</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/muhammad-iqbal-7051011b7/" target="_blank" rel="noopener" data-i18n="hero-cta2">Kunjungi LinkedIn</a>
+      </div>
+
+      <div class="growth-panel reveal" id="growthPanel">
+        <div class="growth-label">
+          <b data-i18n="growth-title">Pertumbuhan saya sebagai SEO Specialist</b>
+          <span data-i18n="growth-range">2016 → sekarang</span>
+        </div>
+        <p class="growth-caption" data-i18n="growth-caption">Grafik ini menggambarkan perkembangan peran dan level keahlian saya sebagai praktisi SEO — bukan performa perusahaan tempat saya bekerja.</p>
+        <div class="chart-frame">
+          <span class="axis-label" data-i18n="growth-yaxis">Level Keahlian ↑</span>
+          <svg id="growthchart" viewBox="0 0 800 190" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="growthFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#5B7A52" stop-opacity="0.16"/>
+                <stop offset="100%" stop-color="#5B7A52" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M20,150 C90,150 100,120 160,112 C220,104 230,90 300,80 C370,70 380,55 460,46 C540,37 550,28 620,22 C670,18 700,15 780,12 L780,190 L20,190 Z"
+              fill="url(#growthFill)" stroke="none"/>
+            <path id="growth-line" d="M20,150 C90,150 100,120 160,112 C220,104 230,90 300,80 C370,70 380,55 460,46 C540,37 550,28 620,22 C670,18 700,15 780,12"
+              fill="none" stroke="var(--moss)" stroke-width="3" stroke-linecap="round"/>
+            <g id="growth-dots">
+              <circle cx="20" cy="150" r="5.5" fill="#fff" stroke="#5B7A52" stroke-width="2.5"/>
+              <circle cx="160" cy="112" r="5.5" fill="#fff" stroke="#5B7A52" stroke-width="2.5"/>
+              <circle cx="300" cy="80" r="5.5" fill="#fff" stroke="#5B7A52" stroke-width="2.5"/>
+              <circle cx="460" cy="46" r="5.5" fill="#fff" stroke="#5B7A52" stroke-width="2.5"/>
+              <circle cx="620" cy="22" r="5.5" fill="#fff" stroke="#5B7A52" stroke-width="2.5"/>
+              <circle cx="780" cy="12" r="7" fill="#5B7A52" stroke="#5B7A52" stroke-width="2.5"/>
+            </g>
+          </svg>
+        </div>
+        <div class="milestones">
+          <div class="milestone"><span class="m-role" data-i18n="m1-role">SEO Staff</span><span class="m-meta" data-i18n="m1-meta">2016 · RDS</span></div>
+          <div class="milestone"><span class="m-role" data-i18n="m2-role">SEO Specialist</span><span class="m-meta" data-i18n="m2-meta">2020 · Next Digital</span></div>
+          <div class="milestone"><span class="m-role" data-i18n="m3-role">SEO Specialist</span><span class="m-meta" data-i18n="m3-meta">2021 · Mekari</span></div>
+          <div class="milestone"><span class="m-role" data-i18n="m4-role">SEO Specialist</span><span class="m-meta" data-i18n="m4-meta">2022 · Bocah ID</span></div>
+          <div class="milestone"><span class="m-role" data-i18n="m5-role">SEO Specialist</span><span class="m-meta" data-i18n="m5-meta">2023 · Easylink</span></div>
+          <div class="milestone"><span class="m-role" data-i18n="m6-role">SEO Specialist</span><span class="m-meta" data-i18n="m6-meta">Kini</span></div>
+        </div>
+        <div class="x-axis-label" data-i18n="growth-xaxis">Waktu (tahun) →</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="impact">
+    <div class="wrap">
+      <div class="impact-grid reveal">
+        <div class="impact-card"><b>7+</b><span data-i18n="impact1">Tahun pengalaman SEO</span></div>
+        <div class="impact-card"><b>24+</b><span data-i18n="impact2">Website & brand ditangani</span></div>
+        <div class="impact-card"><b>6</b><span data-i18n="impact3">Perusahaan & agency</span></div>
+        <div class="impact-card"><b>3</b><span data-i18n="impact4">Pilar SEO yang dikuasai</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-eyebrow" data-i18n="exp-eyebrow">Perjalanan Karier</div>
+        <h2 class="sec-title" data-i18n="exp-title">Setiap peran mengajarkan sesuatu yang baru</h2>
+        <p class="sec-note" data-i18n="exp-note">Dari agency multi-klien di Semarang, SaaS HR, klinik IVF, hingga fintech — pengalaman lintas industri ini membentuk cara saya melihat SEO secara menyeluruh.</p>
+      </div>
+
+      <div class="story-card reveal">
+        <div class="story-period" data-i18n="r1-period">Jun 2023 — Sekarang</div>
+        <div class="story-role" data-i18n="r1-role">SEO Specialist</div>
+        <div class="story-org" data-i18n="r1-org">Easylink (PT. Sahabat Kirim Digital) · Jakarta — Fintech transfer dana</div>
+        <p class="story-desc" data-i18n="r1-desc">Menyusun rencana editorial, bekerja sama dengan tim Produk & Developer untuk membuat website lebih mudah diakses lewat mobile, serta berkolaborasi dengan tim Marketing dan Customer Service untuk meningkatkan kepercayaan pengguna.</p>
+        <div class="story-tags" data-i18n="r1-tags"><span class="tag">Technical SEO</span><span class="tag">Schema Markup</span><span class="tag">Tracking Pengguna</span><span class="tag">Content Plan</span></div>
+        <button class="story-toggle" data-target="d1"><span class="txt" data-i18n="toggle-open-1">Lihat detail pekerjaan</span><span class="chev">▾</span></button>
+        <div class="story-detail" id="d1" data-i18n="r1-detail">
+          <h4>Technical SEO</h4>
+          <ul>
+            <li>Audit website dari domain utama hingga subdomain untuk memutuskan revamp.</li>
+            <li>Memberi rekomendasi ke developer: tampilan mobile yang lebih baik, file CSS &amp; JS lebih ringan.</li>
+            <li>Membuat schema markup dan tracking untuk memahami perilaku pengunjung.</li>
+          </ul>
+          <h4>On-Page SEO</h4>
+          <ul>
+            <li>Menyusun forecast SEO, memetakan persona &amp; perjalanan pengguna, membuat content plan &amp; brief.</li>
+            <li>Riset taksonomi &amp; topic cluster, meninjau artikel dari content writer.</li>
+            <li>Mengoptimalkan judul halaman, meta description, E-E-A-T, dan profil Google Bisnisku.</li>
+          </ul>
+          <h4>Off-Page SEO</h4>
+          <ul><li>Bekerja sama dengan media untuk meningkatkan kepercayaan brand dan mendapat backlink berkualitas.</li></ul>
+        </div>
+      </div>
+
+      <div class="story-card reveal">
+        <div class="story-period" data-i18n="r2-period">Okt 2022 — Mei 2023</div>
+        <div class="story-role" data-i18n="r2-role">SEO Specialist</div>
+        <div class="story-org" data-i18n="r2-org">Bocah Indonesia · Tangerang — Klinik IVF</div>
+        <p class="story-desc" data-i18n="r2-desc">Menjalankan rencana editorial bersama content writer dan memberi rekomendasi pengembangan website — dengan fokus meningkatkan visibilitas, jumlah leads, kecepatan situs, dan posisi di hasil pencarian.</p>
+        <div class="story-tags" data-i18n="r2-tags"><span class="tag">Perbaikan Crawl &amp; Index</span><span class="tag">Kecepatan Halaman</span><span class="tag">Content Plan</span></div>
+        <button class="story-toggle" data-target="d2"><span class="txt" data-i18n="toggle-open-1">Lihat detail pekerjaan</span><span class="chev">▾</span></button>
+        <div class="story-detail" id="d2" data-i18n="r2-detail">
+          <h4>Technical SEO</h4>
+          <ul>
+            <li>Audit menyeluruh, memperbaiki masalah crawl &amp; indexing, memantau kecepatan respons situs.</li>
+            <li>Membuat schema markup, memperbaiki halaman yatim (orphan pages), dan mengatur redirect untuk halaman lama.</li>
+          </ul>
+          <h4>On-Page SEO</h4>
+          <ul>
+            <li>Forecast SEO, pemetaan persona &amp; journey, riset taksonomi &amp; topic cluster.</li>
+            <li>Rencana editorial &amp; content brief, optimasi judul/meta demi CTR lebih baik, E-E-A-T, Google Bisnisku.</li>
+          </ul>
+          <h4>Off-Page SEO</h4>
+          <ul><li>Kolaborasi dengan media untuk backlink berkualitas.</li></ul>
+        </div>
+      </div>
+
+      <div class="story-card reveal">
+        <div class="story-period" data-i18n="r3-period">Jul 2021 — Okt 2022</div>
+        <div class="story-role" data-i18n="r3-role">SEO Specialist</div>
+        <div class="story-org" data-i18n="r3-org">Mekari (Talenta) · Jakarta — HR SaaS</div>
+        <p class="story-desc" data-i18n="r3-desc">Mengoptimalkan Talenta dengan target 130 leads siap-jual per bulan, mengikuti alur dari pengunjung baru hingga menjadi pelanggan — berkolaborasi erat dengan tim Data Analytics dan Front-End Developer.</p>
+        <div class="story-tags" data-i18n="r3-tags"><span class="tag">Funnel Leads</span><span class="tag">Topic Cluster</span><span class="tag">Internal Linking</span></div>
+        <button class="story-toggle" data-target="d3"><span class="txt" data-i18n="toggle-open-1">Lihat detail pekerjaan</span><span class="chev">▾</span></button>
+        <div class="story-detail" id="d3" data-i18n="r3-detail">
+          <h4>Technical SEO</h4>
+          <ul>
+            <li>Audit domain &amp; subdomain, rekomendasi kecepatan situs, memperbaiki crawl &amp; indexing.</li>
+            <li>Schema markup, memperbaiki halaman yatim, redirect, dan diskusi rutin dengan tim Data &amp; Developer.</li>
+          </ul>
+          <h4>On-Page SEO</h4>
+          <ul>
+            <li>Forecast SEO, persona &amp; journey, rencana editorial &amp; brief, riset taksonomi &amp; topic cluster.</li>
+            <li>Internal linking untuk pengalaman pengguna lebih baik, analisis CTR, optimasi judul/meta, E-E-A-T, Google Bisnisku.</li>
+            <li>Mencari dan memperbaiki halaman yang terindikasi plagiarisme.</li>
+          </ul>
+          <h4>Off-Page SEO</h4>
+          <ul><li>Kolaborasi dengan media untuk backlink berkualitas.</li></ul>
+        </div>
+      </div>
+
+      <div class="story-card reveal">
+        <div class="story-period" data-i18n="r4-period">Apr 2020 — Jun 2021</div>
+        <div class="story-role" data-i18n="r4-role">SEO Specialist</div>
+        <div class="story-org" data-i18n="r4-org">Next Digital Indonesia · Jakarta — Agency multi-klien</div>
+        <p class="story-desc" data-i18n="r4-desc">Menangani Technical, On-Page, dan Off-Page SEO untuk 14 lebih klien lintas industri, membantu banyak di antaranya mencapai posisi teratas Google untuk kata kunci incaran.</p>
+        <div class="story-tags" data-i18n="r4-tags"><span class="tag">14+ Klien</span><span class="tag">WordPress</span><span class="tag">Next.js</span></div>
+        <button class="story-toggle" data-target="d4"><span class="txt" data-i18n="toggle-open-2">Lihat klien &amp; tools</span><span class="chev">▾</span></button>
+        <div class="story-detail" id="d4" data-i18n="r4-detail">
+          <h4>Klien yang ditangani</h4>
+          <ul>
+            <li>citrakencanaabadi.co.id, luckypolytank.com, casabel.co.id, dehygienique.co.id, ottoko.com</li>
+            <li>griyasumbermandiri.com, stokind.com, course-net.com, virtualofficeku.com</li>
+            <li>sewasoundsytem.com, harisenjaya.com, primaputrauntungbersama.com, exactlegal.id, tangankanantravel.com</li>
+          </ul>
+          <h4>Tools &amp; Platform</h4>
+          <ul><li>Ahrefs, Moz, Google Analytics, Rankmath/Yoast SEO, Elementor, HTML, Next.js, Codeigniter, Laravel.</li></ul>
+        </div>
+      </div>
+
+      <div class="story-card reveal">
+        <div class="story-period" data-i18n="r5-period">Feb 2016 — Apr 2020</div>
+        <div class="story-role" data-i18n="r5-role">SEO Staff</div>
+        <div class="story-org" data-i18n="r5-org">Republik Digital Solusindo · Semarang — Agency multi-klien</div>
+        <p class="story-desc" data-i18n="r5-desc">Titik awal karier saya di dunia SEO — belajar Technical, On-Page, dan Off-Page SEO dari nol untuk klien seperti Ralali.com, Carvil, Gensetmania, NDS, Tata Motors, dan Fiberstream, sambil membangun kebiasaan kerja yang masih saya pakai sampai sekarang.</p>
+        <div class="story-tags" data-i18n="r5-tags"><span class="tag">Ralali.com</span><span class="tag">WordPress</span></div>
+        <button class="story-toggle" data-target="d5"><span class="txt" data-i18n="toggle-open-2">Lihat klien &amp; tools</span><span class="chev">▾</span></button>
+        <div class="story-detail" id="d5" data-i18n="r5-detail">
+          <h4>Klien yang ditangani</h4>
+          <ul><li>Ralali.com, Nds.id, gensetmania.com, fiberstream.net.id, selerabangsa.com, carvil.co.id, tatamotors.co.id</li></ul>
+          <h4>Tools &amp; Platform</h4>
+          <ul><li>Ahrefs, WordPress, Google Analytics, Google Search Console, Rankmath/Yoast SEO, Divi Theme Builder, Next.js, Codeigniter.</li></ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-eyebrow" data-i18n="skills-eyebrow">Cara Saya Bekerja</div>
+        <h2 class="sec-title" data-i18n="skills-title">Tiga hal yang selalu berjalan bersamaan</h2>
+        <p class="sec-note" data-i18n="skills-note">SEO yang bertahan lama butuh ketiganya sekaligus, bukan salah satu saja.</p>
+      </div>
+      <div class="skill-grid reveal">
+        <div class="skill-card">
+          <div class="skill-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg></div>
+          <h3 data-i18n="skill1-title">Technical SEO</h3>
+          <p data-i18n="skill1-note">Memastikan mesin pencari bisa "membaca" website dengan lancar</p>
+          <ul class="skill-list" data-i18n="skill1-list">
+            <li>Audit domain &amp; subdomain</li><li>Schema markup</li><li>Perbaikan crawl &amp; indexing</li><li>Kecepatan halaman</li><li>Redirect &amp; halaman yatim</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5"/><path d="M6 3h8l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg></div>
+          <h3 data-i18n="skill2-title">On-Page SEO</h3>
+          <p data-i18n="skill2-note">Konten dan struktur yang relevan bagi pembaca dan mesin pencari</p>
+          <ul class="skill-list" data-i18n="skill2-list">
+            <li>Riset persona &amp; user journey</li><li>Content plan &amp; content brief</li><li>Topic cluster</li><li>Judul, meta description &amp; CTR</li><li>E-E-A-T &amp; Google Bisnisku</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1.5-1.5"/></svg></div>
+          <h3 data-i18n="skill3-title">Off-Page SEO</h3>
+          <p data-i18n="skill3-note">Membangun kepercayaan dari luar website</p>
+          <ul class="skill-list" data-i18n="skill3-list">
+            <li>Kolaborasi media untuk brand awareness</li><li>Link building &amp; akuisisi backlink</li><li>Contextual link</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tools">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-eyebrow" data-i18n="tools-eyebrow">Perangkat Kerja</div>
+        <h2 class="sec-title" data-i18n="tools-title">Tools yang saya pakai sehari-hari</h2>
+      </div>
+      <div class="tool-cloud reveal">
+        <span class="tool-chip">Ahrefs</span><span class="tool-chip">Screaming Frog</span><span class="tool-chip">Google Search Console</span>
+        <span class="tool-chip">Google Analytics</span><span class="tool-chip">Google Keyword Planner</span><span class="tool-chip">PageSpeed Insights</span>
+        <span class="tool-chip">Google Tag Manager</span><span class="tool-chip">Ubersuggest</span><span class="tool-chip">GTmetrix</span>
+        <span class="tool-chip">Moz</span><span class="tool-chip">Copyscape</span><span class="tool-chip">Zoho CRM</span>
+        <span class="tool-chip">WordPress</span><span class="tool-chip">Rankmath / Yoast SEO</span><span class="tool-chip">Next.js</span>
+        <span class="tool-chip">Laravel</span><span class="tool-chip">Codeigniter</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-eyebrow" data-i18n="cases-eyebrow">Studi Kasus</div>
+        <h2 class="sec-title" data-i18n="cases-title">Beberapa website yang pernah saya optimasi</h2>
+        <p class="sec-note" data-i18n="cases-note">Lima klien awal karier saya, lengkap dengan kata kunci target dan metode SEO yang dipakai.</p>
+      </div>
+      <div class="case-grid reveal">
+        <div class="case-card">
+          <div class="case-top"><span class="case-name"><a href="https://www.carvil.co.id/" target="_blank" rel="noopener">Carvil</a></span><span class="case-year">2017</span></div>
+          <p class="case-desc" data-i18n="case1-desc">Toko resmi Carvil, menjual sandal, kaos, kemeja dan jaket untuk pria, wanita, dan anak.</p>
+          <div class="case-meta">
+            <span class="case-kw" data-i18n="case1-kw">"sandal casual"</span>
+            <span class="case-method" data-i18n="case1-method">Off-Page SEO</span>
+          </div>
+        </div>
+        <div class="case-card">
+          <div class="case-top"><span class="case-name"><a href="http://gensetmania.com/" target="_blank" rel="noopener">Gensetmania</a></span><span class="case-year">2018</span></div>
+          <p class="case-desc" data-i18n="case2-desc">Jasa penyewaan genset 10–500 KVA di Yogyakarta, Kulon Progo, Magelang, Klaten, dan Jawa Tengah.</p>
+          <div class="case-meta">
+            <span class="case-kw" data-i18n="case2-kw">"sewa genset jogja" &amp; "sewa genset semarang"</span>
+            <span class="case-method" data-i18n="case2-method">On-Page &amp; Off-Page SEO</span>
+          </div>
+        </div>
+        <div class="case-card">
+          <div class="case-top"><span class="case-name"><a href="https://nds.id/" target="_blank" rel="noopener">PT. Network Data Sistem</a></span><span class="case-year">RDS</span></div>
+          <p class="case-desc" data-i18n="case3-desc">Perusahaan IT dengan tim ahli yang fokus pada layanan managed service berkualitas tinggi.</p>
+          <div class="case-meta">
+            <span class="case-kw" data-i18n="case3-kw">"managed service" &amp; "oem vs tpm"</span>
+            <span class="case-method" data-i18n="case3-method">On-Page &amp; Off-Page SEO</span>
+          </div>
+        </div>
+        <div class="case-card">
+          <div class="case-top"><span class="case-name"><a href="https://www.tatamotors.co.id/" target="_blank" rel="noopener">Tata Motors Indonesia</a></span><span class="case-year">RDS</span></div>
+          <p class="case-desc" data-i18n="case4-desc">Anak perusahaan Tata Motors Limited yang menjual mobil pick up irit dan bertenaga sejak 2013.</p>
+          <div class="case-meta">
+            <span class="case-kw" data-i18n="case4-kw">"Mobil Double Cabin Paling Irit"</span>
+            <span class="case-method" data-i18n="case4-method">Off-Page SEO</span>
+          </div>
+        </div>
+        <div class="case-card case-full">
+          <div class="case-top"><span class="case-name"><a href="https://fiberstream.net.id/" target="_blank" rel="noopener">Fiberstream</a></span><span class="case-year">RDS</span></div>
+          <p class="case-desc" data-i18n="case5-desc">Layanan internet rumah unlimited untuk streaming — Netflix, Vidio, Viu, YouTube, iFlix, Catchplay, Amazon, dan lainnya tanpa batas kuota.</p>
+          <div class="case-meta">
+            <span class="case-kw" data-i18n="case5-kw">"wifi rumah unlimited tanpa kabel"</span>
+            <span class="case-method" data-i18n="case5-method">Off-Page SEO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-eyebrow" data-i18n="proj-eyebrow">Proyek &amp; Pencapaian</div>
+        <h2 class="sec-title" data-i18n="proj-title">Beberapa yang paling berkesan</h2>
+      </div>
+      <div class="reveal">
+        <div class="proj-row">
+          <div class="proj-mark">1</div>
+          <div><div class="proj-name">Midtrans, GoPay, GoBiz &amp; Mokapos</div>
+            <div class="proj-desc" data-i18n="proj1-desc">Menjalankan implementasi SEO selama 1 tahun penuh untuk produk-produk fintech ini.</div>
+            <div class="proj-year">2023</div></div>
+        </div>
+        <div class="proj-row">
+          <div class="proj-mark">2</div>
+          <div><div class="proj-name" data-i18n="proj2-name">Digital Marketing Fighter Bootcamp</div>
+            <div class="proj-desc" data-i18n="proj2-desc">Menyelesaikan modul pelatihan untuk memperdalam strategi digital marketing.</div>
+            <div class="proj-year">2022</div></div>
+        </div>
+        <div class="proj-row">
+          <div class="proj-mark">3</div>
+          <div><div class="proj-name">Askarasoft.com</div>
+            <div class="proj-desc" data-i18n="proj3-desc">Implementasi SEO menyeluruh untuk hasil pencarian yang lebih baik.</div>
+            <div class="proj-year">2022</div></div>
+        </div>
+        <div class="proj-row">
+          <div class="proj-mark">4</div>
+          <div><div class="proj-name" data-i18n="proj4-name">Company Profile — Desa Keliway</div>
+            <div class="proj-desc" data-i18n="proj4-desc">Membuat website company profile untuk pemerintahan desa.</div>
+            <div class="proj-year">2021</div></div>
+        </div>
+        <div class="proj-row">
+          <div class="proj-mark">5</div>
+          <div><div class="proj-name" data-i18n="proj5-name">Company Profile — Pemerintah Temanggung</div>
+            <div class="proj-desc" data-i18n="proj5-desc">Membuat website company profile untuk pemerintah kabupaten.</div>
+            <div class="proj-year">2019</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-eyebrow" data-i18n="edu-eyebrow">Pendidikan</div>
+        <h2 class="sec-title" data-i18n="edu-title">Latar belakang akademik</h2>
+      </div>
+      <div class="edu-card reveal">
+        <div><h3>Universitas Dian Nuswantoro</h3><p data-i18n="edu-desc">Sarjana Teknologi Informasi · Semarang, Indonesia</p></div>
+        <span class="edu-period">2015 — 2019</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-card">
+      <div class="foot-eyebrow" data-i18n="foot-eyebrow">Mari Ngobrol</div>
+      <h2 data-i18n="foot-h2">Punya website yang ingin tumbuh lebih jauh?</h2>
+      <p class="foot-sub" data-i18n="foot-sub">Saya senang membantu — mulai dari audit singkat sampai strategi jangka panjang. Hubungi lewat cara yang paling nyaman untuk Anda.</p>
+    </div>
+    <div class="contact-grid">
+      <a class="contact-card" href="https://wa.me/6285779786007" target="_blank" rel="noopener">
+        <span style="display:flex;align-items:center;gap:6px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2C6.477 2 2 6.477 2 12.004c0 1.926.517 3.75 1.42 5.312L2 22l4.775-1.393a9.94 9.94 0 0 0 5.229 1.397c5.527 0 10.004-4.477 10.004-10.004S17.531 2 12.004 2zm0 18.14c-1.68 0-3.234-.492-4.545-1.34l-.326-.204-2.834.826.849-2.762-.213-.336a8.126 8.126 0 0 1-1.281-4.32c0-4.51 3.67-8.18 8.18-8.18 4.51 0 8.18 3.67 8.18 8.18s-3.67 8.136-8.01 8.136z"/></svg>
+          <span data-i18n="contact1-label">WhatsApp</span>
+        </span>
+        <b>085779786007</b>
+      </a>
+      <a class="contact-card" href="mailto:iqbal.muhammad1113@gmail.com"><span data-i18n="contact2-label">Email</span><b>iqbal.muhammad1113@gmail.com</b></a>
+      <a class="contact-card" href="https://www.linkedin.com/in/muhammad-iqbal-7051011b7/" target="_blank" rel="noopener"><span>LinkedIn</span><b>muhammad-iqbal-7051011b7</b></a>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Muhammad Iqbal</span>
+      <span data-i18n="foot-location">Jakarta, Indonesia</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const T = {
+    "nav-journey":{id:"Perjalanan",en:"Journey"},
+    "nav-skills":{id:"Keahlian",en:"Skills"},
+    "nav-cases":{id:"Studi Kasus",en:"Case Studies"},
+    "nav-contact":{id:"Kontak",en:"Contact"},
+    "hero-greet":{id:'Halo, saya <b>Muhammad Iqbal</b> — senang Anda mampir 👋',en:'Hi, I\'m <b>Muhammad Iqbal</b> — glad you stopped by 👋'},
+    "hero-h1":{id:'Saya membantu website tumbuh, <em>bukan sekadar naik peringkat.</em>',en:'I help websites grow, <em>not just rank higher.</em>'},
+    "hero-sub":{id:'7 tahun menekuni SEO — mulai sebagai SEO Staff di Semarang, kini menjadi SEO Specialist untuk perusahaan fintech di Jakarta. Saya percaya SEO yang baik dimulai dari memahami orang yang mencari, bukan hanya algoritma yang menilai.',en:'7 years in SEO — starting as an SEO Staff in Semarang, now an SEO Specialist at a fintech company in Jakarta. I believe good SEO starts with understanding the person searching, not just the algorithm scoring the page.'},
+    "hero-cta1":{id:"Ngobrol dengan saya",en:"Let's talk"},
+    "hero-cta2":{id:"Kunjungi LinkedIn",en:"Visit LinkedIn"},
+    "status-badge":{id:"Terbuka untuk proyek baru",en:"Open for new projects"},
+    "growth-title":{id:"Pertumbuhan saya sebagai SEO Specialist",en:"My growth as an SEO specialist"},
+    "growth-range":{id:"2016 → sekarang",en:"2016 → present"},
+    "growth-caption":{id:"Grafik ini menggambarkan perkembangan peran dan level keahlian saya sebagai praktisi SEO — bukan performa perusahaan tempat saya bekerja.",en:"This chart shows the growth of my role and expertise as an SEO practitioner — not the performance of the companies I've worked for."},
+    "growth-yaxis":{id:"Level Keahlian ↑",en:"Skill Level ↑"},
+    "growth-xaxis":{id:"Waktu (tahun) →",en:"Time (years) →"},
+    "m1-role":{id:"SEO Staff",en:"SEO Staff"}, "m1-meta":{id:"2016 · RDS",en:"2016 · RDS"},
+    "m2-role":{id:"SEO Specialist",en:"SEO Specialist"}, "m2-meta":{id:"2020 · Next Digital",en:"2020 · Next Digital"},
+    "m3-role":{id:"SEO Specialist",en:"SEO Specialist"}, "m3-meta":{id:"2021 · Mekari",en:"2021 · Mekari"},
+    "m4-role":{id:"SEO Specialist",en:"SEO Specialist"}, "m4-meta":{id:"2022 · Bocah ID",en:"2022 · Bocah ID"},
+    "m5-role":{id:"SEO Specialist",en:"SEO Specialist"}, "m5-meta":{id:"2023 · Easylink",en:"2023 · Easylink"},
+    "m6-role":{id:"SEO Specialist",en:"SEO Specialist"}, "m6-meta":{id:"Kini",en:"Now"},
+    "impact1":{id:"Tahun pengalaman SEO",en:"Years of SEO experience"},
+    "impact2":{id:"Website & brand ditangani",en:"Websites & brands handled"},
+    "impact3":{id:"Perusahaan & agency",en:"Companies & agencies"},
+    "impact4":{id:"Pilar SEO yang dikuasai",en:"SEO pillars mastered"},
+    "exp-eyebrow":{id:"Perjalanan Karier",en:"Career Journey"},
+    "exp-title":{id:"Setiap peran mengajarkan sesuatu yang baru",en:"Every role taught me something new"},
+    "exp-note":{id:"Dari agency multi-klien di Semarang, SaaS HR, klinik IVF, hingga fintech — pengalaman lintas industri ini membentuk cara saya melihat SEO secara menyeluruh.",en:"From a multi-client agency in Semarang, to HR SaaS, an IVF clinic, and fintech — this cross-industry path shaped how I see SEO as a whole."},
+    "r1-period":{id:"Jun 2023 — Sekarang",en:"Jun 2023 — Present"},
+    "r1-role":{id:"SEO Specialist",en:"SEO Specialist"},
+    "r1-org":{id:"Easylink (PT. Sahabat Kirim Digital) · Jakarta — Fintech transfer dana",en:"Easylink (PT. Sahabat Kirim Digital) · Jakarta — Fintech money transfer"},
+    "r1-desc":{id:"Menyusun rencana editorial, bekerja sama dengan tim Produk & Developer untuk membuat website lebih mudah diakses lewat mobile, serta berkolaborasi dengan tim Marketing dan Customer Service untuk meningkatkan kepercayaan pengguna.",en:"Built the editorial plan, worked with Product & Developer teams to make the site more mobile-friendly, and partnered with Marketing and Customer Service to build user trust."},
+    "r1-tags":{id:'<span class="tag">Technical SEO</span><span class="tag">Schema Markup</span><span class="tag">Tracking Pengguna</span><span class="tag">Content Plan</span>',en:'<span class="tag">Technical SEO</span><span class="tag">Schema Markup</span><span class="tag">User Tracking</span><span class="tag">Content Plan</span>'},
+    "r1-detail":{id:`<h4>Technical SEO</h4><ul><li>Audit website dari domain utama hingga subdomain untuk memutuskan revamp.</li><li>Memberi rekomendasi ke developer: tampilan mobile yang lebih baik, file CSS & JS lebih ringan.</li><li>Membuat schema markup dan tracking untuk memahami perilaku pengunjung.</li></ul><h4>On-Page SEO</h4><ul><li>Menyusun forecast SEO, memetakan persona & perjalanan pengguna, membuat content plan & brief.</li><li>Riset taksonomi & topic cluster, meninjau artikel dari content writer.</li><li>Mengoptimalkan judul halaman, meta description, E-E-A-T, dan profil Google Bisnisku.</li></ul><h4>Off-Page SEO</h4><ul><li>Bekerja sama dengan media untuk meningkatkan kepercayaan brand dan mendapat backlink berkualitas.</li></ul>`,
+      en:`<h4>Technical SEO</h4><ul><li>Audited the site from the root domain down to subdomains to decide on a revamp.</li><li>Recommended developer fixes: better mobile display, lighter CSS & JS.</li><li>Built schema markup and tracking to understand visitor behavior.</li></ul><h4>On-Page SEO</h4><ul><li>Built SEO forecasts, mapped personas & user journeys, created content plans & briefs.</li><li>Ran taxonomy research & topic clustering, reviewed articles from content writers.</li><li>Optimized page titles, meta descriptions, E-E-A-T, and Google Business Profile.</li></ul><h4>Off-Page SEO</h4><ul><li>Partnered with media outlets to build brand trust and earn quality backlinks.</li></ul>`},
+    "toggle-open-1":{id:"Lihat detail pekerjaan",en:"View job details"},
+    "toggle-open-2":{id:"Lihat klien & tools",en:"View clients & tools"},
+
+    "r2-period":{id:"Okt 2022 — Mei 2023",en:"Oct 2022 — May 2023"},
+    "r2-role":{id:"SEO Specialist",en:"SEO Specialist"},
+    "r2-org":{id:"Bocah Indonesia · Tangerang — Klinik IVF",en:"Bocah Indonesia · Tangerang — IVF Clinic"},
+    "r2-desc":{id:"Menjalankan rencana editorial bersama content writer dan memberi rekomendasi pengembangan website — dengan fokus meningkatkan visibilitas, jumlah leads, kecepatan situs, dan posisi di hasil pencarian.",en:"Ran the editorial plan with content writers and advised on site improvements — focused on visibility, leads, site speed, and search rankings."},
+    "r2-tags":{id:'<span class="tag">Perbaikan Crawl & Index</span><span class="tag">Kecepatan Halaman</span><span class="tag">Content Plan</span>',en:'<span class="tag">Crawl & Index Fixes</span><span class="tag">Page Speed</span><span class="tag">Content Plan</span>'},
+    "r2-detail":{id:`<h4>Technical SEO</h4><ul><li>Audit menyeluruh, memperbaiki masalah crawl & indexing, memantau kecepatan respons situs.</li><li>Membuat schema markup, memperbaiki halaman yatim (orphan pages), dan mengatur redirect untuk halaman lama.</li></ul><h4>On-Page SEO</h4><ul><li>Forecast SEO, pemetaan persona & journey, riset taksonomi & topic cluster.</li><li>Rencana editorial & content brief, optimasi judul/meta demi CTR lebih baik, E-E-A-T, Google Bisnisku.</li></ul><h4>Off-Page SEO</h4><ul><li>Kolaborasi dengan media untuk backlink berkualitas.</li></ul>`,
+      en:`<h4>Technical SEO</h4><ul><li>Full audits, fixed crawl & indexing issues, monitored site response speed.</li><li>Built schema markup, fixed orphan pages, and set up redirects for outdated pages.</li></ul><h4>On-Page SEO</h4><ul><li>SEO forecasts, persona & journey mapping, taxonomy research & topic clustering.</li><li>Editorial plans & content briefs, title/meta optimization for better CTR, E-E-A-T, Google Business Profile.</li></ul><h4>Off-Page SEO</h4><ul><li>Partnered with media for quality backlinks.</li></ul>`},
+
+    "r3-period":{id:"Jul 2021 — Okt 2022",en:"Jul 2021 — Oct 2022"},
+    "r3-role":{id:"SEO Specialist",en:"SEO Specialist"},
+    "r3-org":{id:"Mekari (Talenta) · Jakarta — HR SaaS",en:"Mekari (Talenta) · Jakarta — HR SaaS"},
+    "r3-desc":{id:"Mengoptimalkan Talenta dengan target 130 leads siap-jual per bulan, mengikuti alur dari pengunjung baru hingga menjadi pelanggan — berkolaborasi erat dengan tim Data Analytics dan Front-End Developer.",en:"Optimized Talenta with a target of 130 sales-ready leads per month, following the funnel from new visitor to customer — working closely with Data Analytics and Front-End Developer teams."},
+    "r3-tags":{id:'<span class="tag">Funnel Leads</span><span class="tag">Topic Cluster</span><span class="tag">Internal Linking</span>',en:'<span class="tag">Lead Funnel</span><span class="tag">Topic Cluster</span><span class="tag">Internal Linking</span>'},
+    "r3-detail":{id:`<h4>Technical SEO</h4><ul><li>Audit domain & subdomain, rekomendasi kecepatan situs, memperbaiki crawl & indexing.</li><li>Schema markup, memperbaiki halaman yatim, redirect, dan diskusi rutin dengan tim Data & Developer.</li></ul><h4>On-Page SEO</h4><ul><li>Forecast SEO, persona & journey, rencana editorial & brief, riset taksonomi & topic cluster.</li><li>Internal linking untuk pengalaman pengguna lebih baik, analisis CTR, optimasi judul/meta, E-E-A-T, Google Bisnisku.</li><li>Mencari dan memperbaiki halaman yang terindikasi plagiarisme.</li></ul><h4>Off-Page SEO</h4><ul><li>Kolaborasi dengan media untuk backlink berkualitas.</li></ul>`,
+      en:`<h4>Technical SEO</h4><ul><li>Domain & subdomain audits, site speed recommendations, crawl & indexing fixes.</li><li>Schema markup, orphan page fixes, redirects, and regular syncs with Data & Developer teams.</li></ul><h4>On-Page SEO</h4><ul><li>SEO forecasts, persona & journey mapping, editorial plans & briefs, taxonomy & topic clustering.</li><li>Internal linking for better UX, CTR analysis, title/meta optimization, E-E-A-T, Google Business Profile.</li><li>Found and fixed pages flagged for plagiarism.</li></ul><h4>Off-Page SEO</h4><ul><li>Partnered with media for quality backlinks.</li></ul>`},
+
+    "r4-period":{id:"Apr 2020 — Jun 2021",en:"Apr 2020 — Jun 2021"},
+    "r4-role":{id:"SEO Specialist",en:"SEO Specialist"},
+    "r4-org":{id:"Next Digital Indonesia · Jakarta — Agency multi-klien",en:"Next Digital Indonesia · Jakarta — Multi-client agency"},
+    "r4-desc":{id:"Menangani Technical, On-Page, dan Off-Page SEO untuk 14 lebih klien lintas industri, membantu banyak di antaranya mencapai posisi teratas Google untuk kata kunci incaran.",en:"Handled Technical, On-Page, and Off-Page SEO for 14+ clients across industries, helping many reach top Google positions for their target keywords."},
+    "r4-tags":{id:'<span class="tag">14+ Klien</span><span class="tag">WordPress</span><span class="tag">Next.js</span>',en:'<span class="tag">14+ Clients</span><span class="tag">WordPress</span><span class="tag">Next.js</span>'},
+    "r4-detail":{id:`<h4>Klien yang ditangani</h4><ul><li>citrakencanaabadi.co.id, luckypolytank.com, casabel.co.id, dehygienique.co.id, ottoko.com</li><li>griyasumbermandiri.com, stokind.com, course-net.com, virtualofficeku.com</li><li>sewasoundsytem.com, harisenjaya.com, primaputrauntungbersama.com, exactlegal.id, tangankanantravel.com</li></ul><h4>Tools & Platform</h4><ul><li>Ahrefs, Moz, Google Analytics, Rankmath/Yoast SEO, Elementor, HTML, Next.js, Codeigniter, Laravel.</li></ul>`,
+      en:`<h4>Clients handled</h4><ul><li>citrakencanaabadi.co.id, luckypolytank.com, casabel.co.id, dehygienique.co.id, ottoko.com</li><li>griyasumbermandiri.com, stokind.com, course-net.com, virtualofficeku.com</li><li>sewasoundsytem.com, harisenjaya.com, primaputrauntungbersama.com, exactlegal.id, tangankanantravel.com</li></ul><h4>Tools & Platforms</h4><ul><li>Ahrefs, Moz, Google Analytics, Rankmath/Yoast SEO, Elementor, HTML, Next.js, Codeigniter, Laravel.</li></ul>`},
+
+    "r5-period":{id:"Feb 2016 — Apr 2020",en:"Feb 2016 — Apr 2020"},
+    "r5-role":{id:"SEO Staff",en:"SEO Staff"},
+    "r5-org":{id:"Republik Digital Solusindo · Semarang — Agency multi-klien",en:"Republik Digital Solusindo · Semarang — Multi-client agency"},
+    "r5-desc":{id:"Titik awal karier saya di dunia SEO — belajar Technical, On-Page, dan Off-Page SEO dari nol untuk klien seperti Ralali.com, Carvil, Gensetmania, NDS, Tata Motors, dan Fiberstream, sambil membangun kebiasaan kerja yang masih saya pakai sampai sekarang.",en:"Where my SEO career began — learning Technical, On-Page, and Off-Page SEO from scratch for clients like Ralali.com, Carvil, Gensetmania, NDS, Tata Motors, and Fiberstream, while building habits I still rely on today."},
+    "r5-tags":{id:'<span class="tag">Ralali.com</span><span class="tag">WordPress</span>',en:'<span class="tag">Ralali.com</span><span class="tag">WordPress</span>'},
+    "r5-detail":{id:`<h4>Klien yang ditangani</h4><ul><li>Ralali.com, Nds.id, gensetmania.com, fiberstream.net.id, selerabangsa.com, carvil.co.id, tatamotors.co.id</li></ul><h4>Tools & Platform</h4><ul><li>Ahrefs, WordPress, Google Analytics, Google Search Console, Rankmath/Yoast SEO, Divi Theme Builder, Next.js, Codeigniter.</li></ul>`,
+      en:`<h4>Clients handled</h4><ul><li>Ralali.com, Nds.id, gensetmania.com, fiberstream.net.id, selerabangsa.com, carvil.co.id, tatamotors.co.id</li></ul><h4>Tools & Platforms</h4><ul><li>Ahrefs, WordPress, Google Analytics, Google Search Console, Rankmath/Yoast SEO, Divi Theme Builder, Next.js, Codeigniter.</li></ul>`},
+
+    "skills-eyebrow":{id:"Cara Saya Bekerja",en:"How I Work"},
+    "skills-title":{id:"Tiga hal yang selalu berjalan bersamaan",en:"Three things that always run together"},
+    "skills-note":{id:"SEO yang bertahan lama butuh ketiganya sekaligus, bukan salah satu saja.",en:"SEO that lasts needs all three at once, not just one."},
+    "skill1-title":{id:"Technical SEO",en:"Technical SEO"},
+    "skill1-note":{id:'Memastikan mesin pencari bisa "membaca" website dengan lancar',en:'Making sure search engines can "read" the site smoothly'},
+    "skill1-list":{id:'<li>Audit domain & subdomain</li><li>Schema markup</li><li>Perbaikan crawl & indexing</li><li>Kecepatan halaman</li><li>Redirect & halaman yatim</li>',en:'<li>Domain & subdomain audits</li><li>Schema markup</li><li>Crawl & indexing fixes</li><li>Page speed</li><li>Redirects & orphan pages</li>'},
+    "skill2-title":{id:"On-Page SEO",en:"On-Page SEO"},
+    "skill2-note":{id:"Konten dan struktur yang relevan bagi pembaca dan mesin pencari",en:"Content and structure that's relevant to both readers and search engines"},
+    "skill2-list":{id:'<li>Riset persona & user journey</li><li>Content plan & content brief</li><li>Topic cluster</li><li>Judul, meta description & CTR</li><li>E-E-A-T & Google Bisnisku</li>',en:'<li>Persona & user journey research</li><li>Content plan & content brief</li><li>Topic clustering</li><li>Titles, meta description & CTR</li><li>E-E-A-T & Google Business Profile</li>'},
+    "skill3-title":{id:"Off-Page SEO",en:"Off-Page SEO"},
+    "skill3-note":{id:"Membangun kepercayaan dari luar website",en:"Building trust from outside the website"},
+    "skill3-list":{id:'<li>Kolaborasi media untuk brand awareness</li><li>Link building & akuisisi backlink</li><li>Contextual link</li>',en:'<li>Media collaboration for brand awareness</li><li>Link building & backlink acquisition</li><li>Contextual links</li>'},
+
+    "tools-eyebrow":{id:"Perangkat Kerja",en:"Toolkit"},
+    "tools-title":{id:"Tools yang saya pakai sehari-hari",en:"Tools I use every day"},
+
+    "cases-eyebrow":{id:"Studi Kasus",en:"Case Studies"},
+    "cases-title":{id:"Beberapa website yang pernah saya optimasi",en:"A few websites I've optimized"},
+    "cases-note":{id:"Lima klien awal karier saya, lengkap dengan kata kunci target dan metode SEO yang dipakai.",en:"Five clients from early in my career, with their target keywords and the SEO methods used."},
+    "case1-desc":{id:"Toko resmi Carvil, menjual sandal, kaos, kemeja dan jaket untuk pria, wanita, dan anak.",en:"Carvil's official store, selling sandals, t-shirts, shirts and jackets for men, women, and kids."},
+    "case1-kw":{id:'"sandal casual"',en:'"sandal casual"'},
+    "case1-method":{id:"Off-Page SEO",en:"Off-Page SEO"},
+    "case2-desc":{id:"Jasa penyewaan genset 10–500 KVA di Yogyakarta, Kulon Progo, Magelang, Klaten, dan Jawa Tengah.",en:"Generator rental service (10–500 KVA) covering Yogyakarta, Kulon Progo, Magelang, Klaten, and Central Java."},
+    "case2-kw":{id:'"sewa genset jogja" & "sewa genset semarang"',en:'"sewa genset jogja" & "sewa genset semarang"'},
+    "case2-method":{id:"On-Page & Off-Page SEO",en:"On-Page & Off-Page SEO"},
+    "case3-desc":{id:"Perusahaan IT dengan tim ahli yang fokus pada layanan managed service berkualitas tinggi.",en:"An IT company with a team of specialists focused on high-quality managed services."},
+    "case3-kw":{id:'"managed service" & "oem vs tpm"',en:'"managed service" & "oem vs tpm"'},
+    "case3-method":{id:"On-Page & Off-Page SEO",en:"On-Page & Off-Page SEO"},
+    "case4-desc":{id:"Anak perusahaan Tata Motors Limited yang menjual mobil pick up irit dan bertenaga sejak 2013.",en:"A subsidiary of Tata Motors Limited selling fuel-efficient, powerful pickup trucks since 2013."},
+    "case4-kw":{id:'"Mobil Double Cabin Paling Irit"',en:'"Mobil Double Cabin Paling Irit"'},
+    "case4-method":{id:"Off-Page SEO",en:"Off-Page SEO"},
+    "case5-desc":{id:"Layanan internet rumah unlimited untuk streaming — Netflix, Vidio, Viu, YouTube, iFlix, Catchplay, Amazon, dan lainnya tanpa batas kuota.",en:"An unlimited home internet service for streaming — Netflix, Vidio, Viu, YouTube, iFlix, Catchplay, Amazon and more, with no data caps."},
+    "case5-kw":{id:'"wifi rumah unlimited tanpa kabel"',en:'"wifi rumah unlimited tanpa kabel"'},
+    "case5-method":{id:"Off-Page SEO",en:"Off-Page SEO"},
+
+    "proj-eyebrow":{id:"Proyek & Pencapaian",en:"Projects & Achievements"},
+    "proj-title":{id:"Beberapa yang paling berkesan",en:"A few personal highlights"},
+    "proj1-desc":{id:"Menjalankan implementasi SEO selama 1 tahun penuh untuk produk-produk fintech ini.",en:"Ran SEO implementation for a full year across these fintech products."},
+    "proj2-name":{id:"Digital Marketing Fighter Bootcamp",en:"Digital Marketing Fighter Bootcamp"},
+    "proj2-desc":{id:"Menyelesaikan modul pelatihan untuk memperdalam strategi digital marketing.",en:"Completed a training program to deepen my digital marketing strategy skills."},
+    "proj3-desc":{id:"Implementasi SEO menyeluruh untuk hasil pencarian yang lebih baik.",en:"Full SEO implementation for better search results."},
+    "proj4-name":{id:"Company Profile — Desa Keliway",en:"Company Profile — Keliway Village"},
+    "proj4-desc":{id:"Membuat website company profile untuk pemerintahan desa.",en:"Built a company-profile website for the village government."},
+    "proj5-name":{id:"Company Profile — Pemerintah Temanggung",en:"Company Profile — Temanggung Regency Government"},
+    "proj5-desc":{id:"Membuat website company profile untuk pemerintah kabupaten.",en:"Built a company-profile website for the regency government."},
+
+    "edu-eyebrow":{id:"Pendidikan",en:"Education"},
+    "edu-title":{id:"Latar belakang akademik",en:"Academic background"},
+    "edu-desc":{id:"Sarjana Teknologi Informasi · Semarang, Indonesia",en:"Bachelor's Degree in Information Technology · Semarang, Indonesia"},
+
+    "foot-eyebrow":{id:"Mari Ngobrol",en:"Let's Talk"},
+    "foot-h2":{id:"Punya website yang ingin tumbuh lebih jauh?",en:"Have a website that's ready to grow further?"},
+    "foot-sub":{id:"Saya senang membantu — mulai dari audit singkat sampai strategi jangka panjang. Hubungi lewat cara yang paling nyaman untuk Anda.",en:"I'd love to help — from a quick audit to a long-term strategy. Reach out however's easiest for you."},
+    "contact1-label":{id:"WhatsApp",en:"WhatsApp"},
+    "contact2-label":{id:"Email",en:"Email"},
+    "foot-location":{id:"Jakarta, Indonesia",en:"Jakarta, Indonesia"}
+  };
+
+  function setLang(lang){
+    document.getElementById('htmlRoot').lang = lang;
+    document.getElementById('btnID').classList.toggle('active', lang==='id');
+    document.getElementById('btnEN').classList.toggle('active', lang==='en');
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const key = el.getAttribute('data-i18n');
+      if(T[key] && T[key][lang] !== undefined){
+        el.innerHTML = T[key][lang];
+      }
+    });
+    // re-apply toggle button label state for open details
+    document.querySelectorAll('.story-toggle').forEach(btn=>{
+      const target = document.getElementById(btn.dataset.target);
+      const open = target.classList.contains('open');
+      const key = (btn.dataset.target==='d4'||btn.dataset.target==='d5') ? 'toggle-open-2' : 'toggle-open-1';
+      const closedLabel = T[key][lang];
+      const openLabel = lang==='id' ? 'Sembunyikan detail' : 'Hide details';
+      btn.querySelector('.txt').textContent = open ? openLabel : closedLabel;
+    });
+  }
+
+  const htmlRoot = document.getElementById('htmlRoot');
+  function getStoredTheme(){
+    try{ return localStorage.getItem('iqbal-theme'); }catch(e){ return null; }
+  }
+  function storeTheme(t){
+    try{ localStorage.setItem('iqbal-theme', t); }catch(e){ /* ignore */ }
+  }
+  function applyTheme(theme){
+    htmlRoot.setAttribute('data-theme', theme);
+  }
+  (function initTheme(){
+    const stored = getStoredTheme();
+    if(stored){ applyTheme(stored); }
+    else{
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(prefersDark ? 'dark' : 'light');
+    }
+  })();
+  document.getElementById('themeBtn').addEventListener('click', ()=>{
+    const current = htmlRoot.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    storeTheme(next);
+  });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12});
+  revealEls.forEach(el=>io.observe(el));
+
+  document.querySelectorAll('.story-toggle').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const target = document.getElementById(btn.dataset.target);
+      const open = target.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      const lang = document.getElementById('htmlRoot').lang;
+      const key = (btn.dataset.target==='d4'||btn.dataset.target==='d5') ? 'toggle-open-2' : 'toggle-open-1';
+      const openLabel = lang==='id' ? 'Sembunyikan detail' : 'Hide details';
+      btn.querySelector('.txt').textContent = open ? openLabel : T[key][lang];
+    });
+  });
+
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  menuBtn.addEventListener('click', ()=>{
+    const open = mobileNav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+  mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+    mobileNav.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', false);
+  }));
+</script>
+</body>
+</html>
